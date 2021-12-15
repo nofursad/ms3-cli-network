@@ -115,6 +115,78 @@ def update_menu():
                   "\nPress Enter to continue...\n")
 
 
+def update_user_detail():
+    """
+    Takes username from the user that required the update and
+    search for it. Prompt user for new information to update
+    the data that system hold. Update the old data that system
+    holds with new data provided by user.
+    """
+    while True:
+        newscreen()
+        user_sheet = SHEET.worksheet("users")
+        row_number = user_sheet.find(username).row
+        fname = user_sheet.cell(row_number, 1).value
+
+        # Getting new data from user, validate them and update the
+        # old data in system
+        print(f"Updating the detail for {username}")
+        print("You can only update your Name, Mobile Number and "
+              "Email address.\n")
+        print(f"Hi {fname}, please enter new details to update your "
+              "information that we hold:\n")
+        while True:
+            fname = input("Please enter your first name: \n").strip()
+            if fname.isalpha():
+                break
+            else:
+                print("Please Enter a valid first name.\n")
+        while True:
+            lname = input("Please enter your last name:\n").strip()
+            if lname.isalpha():
+                break
+            else:
+                print("Please Enter a valid last name.\n")
+        while True:
+            mobile = input("Please enter your U.K. mobile number "
+                           "(e.g.07XXXXXXXXX):\n").strip()
+            validate_mobile = phonenumbers.parse(mobile, "GB")
+            mobile_list = SHEET.worksheet("users").col_values(3)
+            if phonenumbers.is_valid_number(validate_mobile):
+                if mobile in mobile_list:
+                    print("Mobile number already exist in database. "
+                          "Please try different number")
+                else:
+                    break
+            else:
+                print("Please enter valid phone number as show in example.\n")
+        while True:
+            email = input("Please enter your email address:\n").strip()
+            email_list = SHEET.worksheet("users").col_values(4)
+            email_format = (
+                r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+            if re.fullmatch(email_format, email):
+                if email in email_list:
+                    print("Email Address already exist in database. "
+                          "Please try different email address")
+                else:
+                    break
+            else:
+                print("Please enter valid email address.\n")
+
+        new_data = (fname, lname, mobile, email)
+        print("Updating new details...\n")
+
+        # Updating the new data to the row in USERS spreedsheet of
+        # current user.
+        for i in range(4):
+            user_sheet.update_cell(row_number, i+1, new_data[i])
+
+        print(f"New Details has been updated for {fname}.")
+        input("Press Enter to continue...")
+        break
+
+
 def timestamp():
     """
     Getting the current time and returning the value
