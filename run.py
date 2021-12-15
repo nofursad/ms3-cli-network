@@ -2,6 +2,7 @@
 Importing the library to use in system
 """
 import re
+import time
 import sys
 from datetime import datetime
 from tabulate import tabulate
@@ -412,6 +413,32 @@ def remove_friend():
                 break
 
 
+def vfr_menu():
+    """
+    This function display the menu item when user select view
+    friend request from login menu.
+    """
+    while True:
+        newscreen()
+        print("VIEW FRIEND REQUESTS\n")
+        print("1. Accept Incoming Friend Requests")
+        print("2. Cancel Outgoing Friend Requests")
+        print("3. Main Menu")
+
+        choice = input("\nPlease choose an option by entering "
+                       "1, 2 or 3\n").strip()
+
+        if choice == '1':
+            afr()
+        elif choice == '2':
+            cfr()
+        elif choice == '3':
+            break
+        else:
+            print("Invalid selection. Please enter 1, 2, or 3\n"
+                  "Press Enter to continue...\n")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
@@ -541,7 +568,8 @@ def main():
         print("2. New User")
         print("3. Exit")
 
-        choice = input("Please choose an option by entering 1, 2 or 3\n").strip()
+        choice = input("Please choose an option by entering "
+                       "1, 2 or 3\n").strip()
 
         if choice == '1':
             login()
@@ -550,7 +578,8 @@ def main():
         elif choice == '3':
             sys.exit(0)
         else:
-            input("Invalid selection. Please enter 1, 2, or 3\nPress Enter to continue...\n")
+            input("Invalid selection. Please enter 1, 2, or 3\n"
+                  "Press Enter to continue...\n")
 
 
 def header():
@@ -558,27 +587,38 @@ def header():
     This function print the header in the main page to welcome the
     user when user first open the system.
     """
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+          "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     time.sleep(0.2)
-    print("@@                                                                                                                 @@")
+    print("@@                                                                 "
+          "                                                @@")
     time.sleep(0.2)
-    print("@@      @@@@  @@       @@@@@@      @@      @@ @@@@@@@@@ @@@@@@@@@@ @@        @@      @@@      @@@@@@    @@    @@   @@")
+    print("@@      @@@@  @@       @@@@@@      @@      @@ @@@@@@@@@ @@@@@@@@@@ "
+          "@@        @@      @@@      @@@@@@    @@    @@   @@")
     time.sleep(0.2)
-    print("@@     @@     @@         @@        @@@     @@ @@            @@     @@        @@     @@ @@     @@   @@   @@   @@    @@")
+    print("@@     @@     @@         @@        @@@     @@ @@            @@     "
+          "@@        @@     @@ @@     @@   @@   @@   @@    @@")
     time.sleep(0.2)
-    print("@@   @@       @@         @@        @@ @@   @@ @@            @@     @@        @@   @@     @@   @@   @@   @@ @@      @@")
+    print("@@   @@       @@         @@        @@ @@   @@ @@            @@     "
+          "@@        @@   @@     @@   @@   @@   @@ @@      @@")
     time.sleep(0.2)
-    print("@@   @@       @@         @@        @@  @@  @@ @@@@@@        @@     @@   @@   @@  @@       @@  @@@@@@    @@@@       @@")
+    print("@@   @@       @@         @@        @@  @@  @@ @@@@@@        @@     "
+          "@@   @@   @@  @@       @@  @@@@@@    @@@@       @@")
     time.sleep(0.2)
-    print("@@   @@       @@         @@        @@   @@ @@ @@            @@     @@  @@@@  @@   @@     @@   @@ @@     @@ @@      @@")
+    print("@@   @@       @@         @@        @@   @@ @@ @@            @@     "
+          "@@  @@@@  @@   @@     @@   @@ @@     @@ @@      @@")
     time.sleep(0.2)
-    print("@@     @@     @@         @@        @@     @@@ @@            @@     @@@@    @@@@     @@ @@     @@   @@   @@   @@    @@")
+    print("@@     @@     @@         @@        @@     @@@ @@            @@     "
+          "@@@@    @@@@     @@ @@     @@   @@   @@   @@    @@")
     time.sleep(0.2)
-    print("@@      @@@@  @@@@@@@  @@@@@@      @@      @@ @@@@@@@@@     @@     @@@      @@@      @@@      @@    @@  @@    @@   @@")
+    print("@@      @@@@  @@@@@@@  @@@@@@      @@      @@ @@@@@@@@@     @@     "
+          "@@@      @@@      @@@      @@    @@  @@    @@   @@")
     time.sleep(0.2)
-    print("@@                                                                                                                 @@")
+    print("@@                                                                 "
+          "                                                @@")
     time.sleep(0.2)
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+          "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 
 
 if __name__ == "__main__":
