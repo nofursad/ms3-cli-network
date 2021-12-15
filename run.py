@@ -56,6 +56,65 @@ def login():
             login_menu(username)
 
 
+def login_menu(username):
+    """
+    This function display the menu item when user login to the system.
+    """
+    while True:
+        newscreen()
+        print(f"Welcome back to Network {username}\n")
+        print("1. Update User Detail")
+        print("2. Add Friend")
+        print("3. View Friend")
+        print("4. View Friend Request")
+        print("5. Logout")
+
+        choice = input("Please choose an option by entering number "
+                       "between 1 to 5\n").strip()
+
+        if choice == '1':
+            update_menu()
+        elif choice == '2':
+            ad_menu()
+        elif choice == '3':
+            vf_menu()
+        elif choice == '4':
+            vfr_menu()
+        elif choice == '5':
+            userID = None
+            username = None
+            break
+        else:
+            input("Invalid selection. Please enter number between "
+                  "1 to 5\nPress Enter to continue...\n")
+
+
+def update_menu():
+    """
+    This function display the menu item when user select update user menu
+    request from login menu.
+    """
+    while True:
+        newscreen()
+        print("UPDATE USER DETAILS\n")
+        print("1. Update User Information")
+        print("2. Delete User")
+        print("3. Main Menu")
+
+        choice = input("Please choose an option by entering "
+                       "1, 2 or 3\n").strip()
+
+        if choice == '1':
+            update_user_detail()
+        elif choice == '2':
+            delete_user()
+        elif choice == '3':
+            break
+        else:
+            print("Invalid selection. Please enter 1, 2, or 3"
+                  "\nPress Enter to continue...\n")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
