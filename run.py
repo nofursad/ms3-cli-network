@@ -382,6 +382,36 @@ def view_friends():
     return users_ids
 
 
+def remove_friend():
+    """
+    This function will give option to the user to remove the friend
+    from the friend list of the user.
+    """
+    friend_sheet = SHEET.worksheet("connections")
+    # Getting user id of friends of current user and displaying
+    #  list for user to select from.
+    users_ids = view_friends()
+    if users_ids == []:
+        pass
+    else:
+        while True:
+            del_friend = input("Please enter the number infront of name "
+                               "to delete the connection or type 'e' to "
+                               "exit.\n").strip()
+            if del_friend.isdigit() and int(del_friend) <= len(users_ids):
+                print("Deleting from friend list...")
+                friend_sheet.delete_rows((users_ids[int(del_friend)-1]).row)
+                input("Deletion completed.\nPress Enter to continue...")
+                break
+            elif del_friend == "e":
+                input("Redirecting you to previous menu.\n"
+                      "Press Enter to continue...")
+                break
+            else:
+                input("Invalid option entered. Please try again.")
+                break
+
+
 def timestamp():
     """
     Getting the current time and returning the value
