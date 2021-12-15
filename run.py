@@ -309,6 +309,32 @@ def add_friend():
                           "valid option.")
 
 
+def vf_menu():
+    """
+    This function display the menu item when user select view friend
+    from login menu.
+    """
+    while True:
+        newscreen()
+        print("VIEW FRIENDS\n")
+        print("1. View Friends")
+        print("2. Remove Friend")
+        print("3. Main Menu")
+
+        choice = input("Please choose an option by entering "
+                       "1, 2 or 3\n").strip()
+
+        if choice == '1':
+            view_friends()
+        elif choice == '2':
+            remove_friend()
+        elif choice == "3":
+            break
+        else:
+            input("Invalid selection. Please enter 1, 2 or 3\nPress "
+                  "Enter to continue...\n")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
