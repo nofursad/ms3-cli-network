@@ -484,6 +484,51 @@ def afr():
                 input("Invalid option entered.\nPress Enter to continue...")
 
 
+def cfr():
+    """
+    This function will cancel the friend request that user have send
+    to other user but has not been accepted yet.
+    """
+    while True:
+        user_sheet = SHEET.worksheet("users")
+        friend_sheet = SHEET.worksheet("connections")
+        friend_requests = friend_sheet.findall(userID)
+        cfr = []
+        # Getting the list of name of people who have send friend request.
+        for frs in friend_requests:
+            if frs.col == 1:
+                if friend_sheet.cell(frs.row, 3).value == "n":
+                    cfr.append(friend_sheet.cell(frs.row, 2))
+        if cfr == []:
+            input("You don't have any outgoing friend request.\n"
+                  "Press Enter to continue...")
+            break
+        else:
+            print("You have send the friend request to below people:\n")
+            i = 1
+            for frs in cfr:
+                row = user_sheet.find(frs.value).row
+                print(f"{i}. {user_sheet.cell(row, 1).value} "
+                      f"{user_sheet.cell(row, 2).value}")
+                i += 1
+            # Getting confirmation from user either to accept friend
+            # request or exit.
+            confirm = input("\nPlease enter the number infront of name to "
+                            "cancel friend request.\nOr type 'n' to "
+                            "exit.\n").strip()
+            if confirm.isdigit() and len(cfr) >= int(confirm):
+                friend_sheet.delete_rows(cfr[int(confirm)-1].row)
+                input("Friend request that you send is withdrawn now.\n"
+                      "Press Enter to continue...")
+                break
+            elif confirm == "n":
+                input("Redirecting you to previous menu.\n"
+                      "Press Enter to continuee...")
+                break
+            else:
+                input("Invalid option entered.\nPress Enter to continue...")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
