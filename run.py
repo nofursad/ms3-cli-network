@@ -24,6 +24,33 @@ def newscreen():
     print('\033c')
 
 
+def login():
+    """
+    Login in function for user to login to the system
+    Takes username from the user and match it to database
+    Give access to system if user exist
+    """
+    newscreen()
+    print("LOGIN TO NETWORK\n")
+    user_sheet = SHEET.worksheet("users")
+    user = input("Please Enter your username:\nOr Press Enter to go back to main menu.\n").strip()
+    if user == "":
+        main()
+    else:
+        search_result = user_sheet.find(user)
+        if search_result is None:
+            print(
+                f"Invalid Username. Username '{user}' not found in system. Please try again."
+            )
+            input("Press Enter to continue...")
+        else:
+            global userID
+            userID = user_sheet.cell(user_sheet.find(user).row, 8).value
+            global username
+            username = user
+            login_menu(username)
+
+
 def main():
     """
     Main Menu to display to user at the main screen when the system loads
