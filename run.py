@@ -187,6 +187,49 @@ def update_user_detail():
         break
 
 
+def delete_user():
+    """
+    Takes the username from user that user want to delete
+    Retrive the data and confirm with user for deletion of data
+    Delete the user after user confirm
+    """
+    while True:
+        newscreen()
+        user_sheet = SHEET.worksheet("users")
+        friend_sheet = SHEET.worksheet("connections")
+        row_number = user_sheet.find(username).row
+        fname = user_sheet.cell(row_number, 1).value
+
+        # Getting conformation from user to delete the account
+        # by confirmting the username.
+        print(f"Do you want to delete the account for {fname}?\n")
+        confirmation = input("please type username to confirm or 'n' to "
+                             "cancel it...\n").strip()
+
+        if confirmation == username:
+            print(f"Deleting user {username}...\n")
+            user_sheet.delete_rows(row_number)
+            while True:
+                if friend_sheet.find(userID):
+                    row = friend_sheet.find(userID).row
+                    friend_sheet.delete_rows(row)
+                else:
+                    break
+            print(f"The user {username} is deleted. Your will be redirected "
+                  "to main menu now.")
+            input("Press Enter to continue..")
+            main()
+            # break
+        elif confirmation == "n":
+            print(f"The account for {fname} is not deleted. You will be "
+                  "redirected to previous menu now.")
+            input("Press Enter to continue...")
+            break
+        else:
+            input("Invalid input please try again.\nPress Enter to "
+                  "try again...")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
