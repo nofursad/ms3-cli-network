@@ -230,6 +230,29 @@ def delete_user():
                   "try again...")
 
 
+def ad_menu():
+    """
+    This function display the menu item when user select
+    add friend from login menu.
+    """
+    while True:
+        newscreen()
+        print("ADD FRIEND\n")
+        print("1. Add Friend")
+        print("2. Main Menu")
+
+        choice = input("\nPlease choose an option by entering "
+                       "1 or 2\n").strip()
+
+        if choice == '1':
+            add_friend()
+        elif choice == '2':
+            break
+        else:
+            print("Invalid selection. Please enter 1 or 2."
+                  "\nPress Enter to continue...\n")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
