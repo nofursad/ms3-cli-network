@@ -4,6 +4,7 @@ Importing the library to use in system
 import re
 import sys
 from datetime import datetime
+from tabulate import tabulate
 import gspread
 import phonenumbers
 from google.oauth2.service_account import Credentials
@@ -333,6 +334,52 @@ def vf_menu():
         else:
             input("Invalid selection. Please enter 1, 2 or 3\nPress "
                   "Enter to continue...\n")
+
+
+def view_friends():
+    """
+    This function takes username and get the list of user that is
+    connected with current user and print the list of the name.
+    """
+    # connecting to the worksheet to retrive the data
+    friend_sheet = SHEET.worksheet("connections")
+    user_sheet = SHEET.worksheet("users")
+    print("Preparing list of your friends...\n")
+
+    all_friends_list = friend_sheet.findall(userID)
+
+    # Getting the ID of other user who are friend with current user
+    # global users_ids
+    users_ids = []
+    for friend in all_friends_list:
+        if (friend_sheet.cell(friend.row, 3).value) == "y":
+            if (friend.col) == 1:
+                users_ids.append(friend_sheet.cell(friend.row, 2))
+            else:
+                users_ids.append(friend_sheet.cell(friend.row, 1))
+    users_data = []
+
+    # Retriving and printing the information of user's friends in table
+    # using the user ID of user's friends
+    if users_ids == []:
+        input("You are not yet connected to anyone.\nPress Enter to "
+              "continue...")
+    else:
+        print("You are friend with below people")
+        i = 1
+        for user_id in users_ids:
+            row = user_sheet.find(user_id.value).row
+            user_full_data = user_sheet.row_values(row)
+            user_full_data.insert(0, i)
+            users_data.append(user_full_data[:-3])
+            i += 1
+        table_header = [
+            'First Name', 'Last Name',
+            'Phone No', 'Email ID', 'Date of Birth']
+        print(tabulate(users_data, headers=table_header, tablefmt="grid"))
+        input("\nThese are all the friend/s you are connected to.\n"
+              "Press Enter to continue...")
+    return users_ids
 
 
 def timestamp():
