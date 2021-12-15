@@ -253,6 +253,62 @@ def ad_menu():
                   "\nPress Enter to continue...\n")
 
 
+def add_friend():
+    """
+    This function will get the name of the person that user want to
+    look for and search the database to see if any user with the name
+    exist. If user found with the matching name( than user will get
+    option to send request to add them in connection.)
+    """
+    while True:
+        newscreen()
+        # connecting to the worksheet to retrive the data
+        user_sheet = SHEET.worksheet("users")
+        friend_sheet = SHEET.worksheet("connections")
+        search = input("Please enter the first or last name of a user that "
+                       "you want to search,\nOr Hit Enter to go to previous "
+                       "menu:\n").strip()
+        search_result = user_sheet.findall(search)
+        search_result_id = []
+
+        # Printing the list of matching name found in database
+        if search == "":
+            break
+        elif search_result == []:
+            input(f"No user with the name {search} found in the database."
+                  "\nPress Enter to search different name...")
+        else:
+            print(f"We found below user/s with name {search} in our "
+                  "database.\n")
+            i = 1
+            for user in search_result:
+                row_num = user.row
+                fname = user_sheet.cell(row_num, 1).value
+                lname = user_sheet.cell(row_num, 2).value
+                search_result_id.append(user_sheet.cell(row_num, 8).value)
+                print(f"{i}. {fname} {lname}")
+                i += 1
+
+            # getting number in front of name on list from user to add
+            # as friend and send request
+            while True:
+                confirm = input("\nType a number infront of user to add "
+                                "them as friend or type 'n' to go to "
+                                "previous menu.\n").strip()
+                if confirm.isdigit() and len(search_result_id) >= int(confirm):
+                    data = [userID, search_result_id[int(confirm)-1], "n"]
+                    friend_sheet.append_row(data)
+                    input("Friend request send.\nPress Enter to continue...")
+                    break
+                elif confirm == "n":
+                    input("You will be redirected to previous menu. \nPress "
+                          "Enter to continue...")
+                    break
+                else:
+                    print(f"{confirm} is not a valid option. Please enter "
+                          "valid option.")
+
+
 def timestamp():
     """
     Getting the current time and returning the value
