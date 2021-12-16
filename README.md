@@ -122,33 +122,53 @@ User details are store in external Google Spreadsheet.
 
 - ###  __F12 Add Friend__
 
-    - User can select option .   
+    - User can select option 2 from login menu to get into this sub-menu. Here, user will have an option to add a new friends. User can search for friend by either their first name or last name. User can go back to previous menu by hitting enter.    
 
       ![Add Friend](documentation/images/f12_add_friend.png)
 
+    - When user search for friend, if matching name found, system will print the list of all the matched name and give option to user to add them as a friend (see image below).
+
+      ![Search Result](documentation/images/f12_add_friends_list.png)
+
 - ###  __F13 View Friends__
 
-    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+    - When user select view friend option from the view friend sub-menu, user will be redirected to this page. User can go back to previous page by hitting enter. If you doen't have any friend than system will display message (see image below).   
 
-      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+      ![View Friend when no friend connected](documentation/images/f13_view_friend_nofriend.png)
+    
+    - If user have a friend already connected to them than user will be presented with the list of the friends and their few details (see the image below).  
+
+      ![View Friend with friends list](documentation/images/f13_view_friends.png)
 
 - ###  __F14 Remove Friends__
 
-    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+    - Selecting option 2 in the View Friends sub-menu will being user to this page. User can remove any connected friend from their friend list from this page. User will get the list of friend and given option to type in the number infront of the friend name to remove them (see the image below).   
 
-      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+      ![Remove Friend](documentation/images/f14_remove_friend.png)
+
+    - Once user enter the number displayed infront of name, user will be disconnected with the next user and massage will be displayed for confirmation (see the image below).   
+
+      ![Remove Friend Confirmation message](documentation/images/f14_remove_friend_confirm.png)
 
 - ###  __F15 Accept Incoming Friend Requests__
 
-    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+    - When user select option 1 from the View friend request sub-menu, user will come to this page where user can see the list of people who have send the friend request to the user (see the image below).   
 
-      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+      ![Accept Incoming Friend Request List](documentation/images/f15_afr.png)
+
+    - User will get option to type in the number infront of the name to accept friend request or type 'n' to exit without taking any action. When user type in the number infront of name and hit enter, connection will be made and a confirmation message will be display (see the image below).   
+
+      ![Accept Incoming Friend Request confirmation](documentation/images/f15_afr_confirm.png)
 
 - ###  __F16 Cancel Outgoing Friend Requests__
 
-    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+    - If user want to cancel any friend request that they have send to connect with another user, they can select option 2 from View Friend Request sub-menu and come to this page. User will get the list of name that they have send friend request to and giving option to withdraw the request (see the image below).   
 
-      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+      ![Cancel Outgoing Friend Request List](documentation/images/f16_cfr.png)
+
+    - User can enter the number printed infront of the name of another user to cancel the friend request that they have send too. Once user enter the number and hit enter, user will get the confirmation message of withdrawal (see the image below).   
+
+      ![Cancel Outgoing Friend Request List](documentation/images/f16_cfr_confirm.png)
 
 ### Features which could be implemented in the future
 
