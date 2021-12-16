@@ -174,15 +174,11 @@ User details are store in external Google Spreadsheet.
 
 - __Appropriate UI__
 
-  As this application uses the command line interface it is not very user friendly for a human end-user.  An obvious future feature of this application would be to build a better user-interace layer using HTML/CSS and possibly Javascript to make it much more intuititve to use.
+  As this application was developed mostly using python and is in command line interface it is not very user friendly for end-user. So, one of the future features will be to build an appropriate UI using more of the front end languages like HTML and CSS and most probably Javascript to make it more user-friendly.
 
-- __Extended Data Model__
+- __Security for user__
 
-  The data model representing the Events and Bookings is very simplistic in terms of the data elements it stores.  This could be extended to store additional data with more complex data relationship rules.  The data model and code could also be re-structured to use a better Object Oriented approach, where Events and Bookings could be handled as Object types with methods and attributes.
-
-- __Extended Data Analysis__
-
-  The Review Past Events feature of the application gives a breakdown of cancelled events vs events that weren't cancelled and shows % seats booked for those that went ahead.  Analysis of the data could be extended to find other information from the data, such as how frequently are certain events cancelled due to lack of bookings, which courses are most popular etc. and then this information could help the users plan ahead when trying to schedule events.  This type of information could also potentially be used to automate some tasks - e.g. automatically send an administrator an email highlighting a particular event has below a certain threshold of bookings coming up to it's scheduled date, so that the administrator has time to take action - e.g. send out a marketing email to draw attention to the event.
+  Currently the user only need to know the username to access their account which make it more vulnerable to security threats. So, another future features will be to add the password for account to make it more secure.
 
 ## Design
 
@@ -190,7 +186,7 @@ User details are store in external Google Spreadsheet.
 
 ### Languages Used
 
--   [Python 3.8.10](https://www.python.org/)
+-   [Python 3.8.11](https://www.python.org/)
 
 ### Frameworks, Libraries & Programs Used
 
