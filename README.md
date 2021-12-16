@@ -1,5 +1,5 @@
 <h1 align="center">CLI Network</h1>
-[View live project here](https://ms3-cli-network.herokuapp.com/)
+![View live project here](https://ms3-cli-network.herokuapp.com/)
 
 CLI Networking is a command line social media to connect with people to share the contact details.
 Rather than getting the phone number and email address and adding people details by yourself, users will find and add the person they wish to connect to. When their friend request is accepted, both user will be able to see each other contact details. User can add/remove friends, view friends and get their contact details.
