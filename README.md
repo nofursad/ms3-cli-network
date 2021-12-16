@@ -1,5 +1,6 @@
 <h1 align="center">CLI Network</h1>
-![View live project here](https://ms3-cli-network.herokuapp.com/)
+
+[View the live project here](https://ms3-cli-network.herokuapp.com/)
 
 CLI Networking is a command line social media to connect with people to share the contact details.
 Rather than getting the phone number and email address and adding people details by yourself, users will find and add the person they wish to connect to. When their friend request is accepted, both user will be able to see each other contact details. User can add/remove friends, view friends and get their contact details.
@@ -60,29 +61,64 @@ User details are store in external Google Spreadsheet.
     - After entering all the required information, system will notify user that the user account have been created and display the username for user to login (see image below). User will be prompt to hit enter to continue and will redirected to main menu.
 
       ![Create New User completed form](documentation/images/f03_create_user_final.png)
-- ###  __F04 Update User Detail sub-menu__
 
-- ###  __F05 Add Friend sub-menu__
+- ###  __F04 Login menu__
+    - When user enter correct username in login page, user will be redireted to login menu page(see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
 
-- ###  __F06 View Friend sub-menu__
+      ![Login Menu](documentation/images/f04_login_menu.png)
 
-- ###  __F07 View Friend Request sub-menu__
+    - The login menu is repeatedly refreshed and re-displayed while inputs from the user are invalid and after each menu option 1 - 4 completes.  The user can logout of the system by selecting option 5 from the login menu.  
 
-- ###  __F08 Logout__
+      ![Login Menu](documentation/images/f04_login_menu_error.png)
 
-- ###  __F09 Update User Information__
+  
+- ###  __F05 Update User Detail sub-menu__
 
-- ###  __F10 Delete User__
+    - When user selection option 1 from the login menu, user will be brough here and given the options to choose from to updated their own details or delete their own account (see the image below). User can going back to the login menu by selecting option 3.   
 
-- ###  __F11 Add Friend__
+      ![Update User Details Sub-menu](documentation/images/f05_update_user_details.png)
 
-- ###  __F12 View Friends__
 
-- ###  __F13 Remove Friends__
+- ###  __F06 Add Friend sub-menu__
 
-- ###  __F14 Accept Incoming Friend Requests__
+    - When user selection option 2 from the login menu, user will be brough here and given the options to find and add a new friends (see the image below). User can going back to the login menu by selecting option 2.   
 
-- ###  __F15 Cancel Outgoing Friend Requests__
+      ![Add Friend Sub-menu](documentation/images/f06_add_friends.png)
+
+
+- ###  __F07 View Friends sub-menu__
+
+    - When user selection option 3 in the login menu, user will be brough to View Friends Sub-menu (see image below). This Sub-menu divides the functionality into furthur 2 sub-menus: 1) View Friends and 2) Remove Friends. User can go back to login menu by selecting option 3.   
+
+      ![View Friend](documentation/images/f07_view_friends.png)
+
+- ###  __F08 View Friend Requests sub-menu__
+
+    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+
+      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+
+- ###  __F09 Logout__
+
+    - When user is finished using the system and want to logout of the system, user will select option 5. User will be redirected to the main menu when user logout of the syste.  
+
+- ###  __F10 Update User Information__
+
+    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+
+      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+
+- ###  __F11 Delete User__
+
+- ###  __F12 Add Friend__
+
+- ###  __F13 View Friends__
+
+- ###  __F14 Remove Friends__
+
+- ###  __F15 Accept Incoming Friend Requests__
+
+- ###  __F16 Cancel Outgoing Friend Requests__
 
 
 ### Features which could be implemented in the future
