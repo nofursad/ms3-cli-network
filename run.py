@@ -177,6 +177,9 @@ def update_user_detail():
                 print("Please enter valid email address.\n")
 
         new_data = (fname, lname, mobile, email)
+        print(mobile)
+        print(type(mobile))
+        input("")
         print("Updating new details...\n")
 
         # Updating the new data to the row in USERS spreedsheet of
@@ -637,7 +640,7 @@ def createuser():
         data = (fname, lname, mobile, email, dob, username, time_stamp)
         SHEET.worksheet("users").append_row(data)
         print(f"New user created for {fname} successfully. "
-              "Please use username '{username}' to log in.\n")
+              f"Please use username '{username}' to log in.\n")
         print("You will be redirect to main menu, please use "
               "username you created to login.")
 
@@ -666,6 +669,7 @@ def main():
         elif choice == '2':
             createuser()
         elif choice == '3':
+            print("Thank you for using CLI NETWORK. Goodbye !")
             sys.exit(0)
         else:
             input("Invalid selection. Please enter 1, 2, or 3\n"
@@ -679,34 +683,34 @@ def header():
     """
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
           "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@                                                                 "
           "                                                @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@      @@@@  @@       @@@@@@      @@      @@ @@@@@@@@@ @@@@@@@@@@ "
           "@@        @@      @@@      @@@@@@    @@    @@   @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@     @@     @@         @@        @@@     @@ @@            @@     "
           "@@        @@     @@ @@     @@   @@   @@   @@    @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@   @@       @@         @@        @@ @@   @@ @@            @@     "
           "@@        @@   @@     @@   @@   @@   @@ @@      @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@   @@       @@         @@        @@  @@  @@ @@@@@@        @@     "
           "@@   @@   @@  @@       @@  @@@@@@    @@@@       @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@   @@       @@         @@        @@   @@ @@ @@            @@     "
           "@@  @@@@  @@   @@     @@   @@ @@     @@ @@      @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@     @@     @@         @@        @@     @@@ @@            @@     "
           "@@@@    @@@@     @@ @@     @@   @@   @@   @@    @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@      @@@@  @@@@@@@  @@@@@@      @@      @@ @@@@@@@@@     @@     "
           "@@@      @@@      @@@      @@    @@  @@    @@   @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@                                                                 "
           "                                                @@")
-    time.sleep(0.2)
+    time.sleep(0.1)
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
           "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 
