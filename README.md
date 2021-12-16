@@ -76,7 +76,7 @@ User details are store in external Google Spreadsheet.
 
     - When user selection option 1 from the login menu, user will be brough here and given the options to choose from to updated their own details or delete their own account (see the image below). User can going back to the login menu by selecting option 3.   
 
-      ![Update User Details Sub-menu](documentation/images/f05_update_user_details.png)
+      ![Update User Details Sub-menu](documentation/images/f05_update_user_menu.png)
 
 
 - ###  __F06 Add Friend sub-menu__
@@ -104,22 +104,51 @@ User details are store in external Google Spreadsheet.
 
 - ###  __F10 Update User Information__
 
+    - When user select option 1 from update user details sub-menu, user will be redirected to this page (see below image). Here user can update only his first name, last name, mobile number and email address. Validation process will be carried out at the background when user enter the data to make sure data is correct.   
+
+      ![Update User Details](documentation/images/f10_update_user_details.png)
+
+    - After user input all the data, system will update the user data in database and give the confirmation message about the update.   
+
+- ###  __F11 Delete User__
+
+    - When user select option 2 from update user details sub-menu, user will be redirected to this page (see below image). If user don't want to use the system anymore than user can delete their account from this option. User will be asked to enter the username to confirm the deletion of the account or type 'n' and hit enter to cancel the deletion process and go back to previous menu.   
+
+      ![Delete User](documentation/images/f11_delete_user.png)
+
+    - User will be asked to enter the username to confirm the deletion of the account or type 'n' and hit enter to cancel the deletion process and go back to previous menu (see the image below).   
+
+      ![Delete User Cancellation](documentation/images/f11_delete_user_confirmation.png)
+
+- ###  __F12 Add Friend__
+
+    - User can select option .   
+
+      ![Add Friend](documentation/images/f12_add_friend.png)
+
+- ###  __F13 View Friends__
+
     - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
 
       ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
 
-- ###  __F11 Delete User__
-
-- ###  __F12 Add Friend__
-
-- ###  __F13 View Friends__
-
 - ###  __F14 Remove Friends__
+
+    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+
+      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
 
 - ###  __F15 Accept Incoming Friend Requests__
 
+    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+
+      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
+
 - ###  __F16 Cancel Outgoing Friend Requests__
 
+    - User will be brought to View Friend Requests sub-menu when they select option 4 in the login menu (see image below). To keep the interface simple to use and uncluttered the menu divides the functionality into four sub-menus: 1) Update User Details, 2) Add Friends, 3) View Friends and 4) View Friend Requests.   
+
+      ![View Friend Request Sub-menu](documentation/images/f08_view_friend_requests.png)
 
 ### Features which could be implemented in the future
 
