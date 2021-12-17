@@ -225,17 +225,6 @@ User details are store in external Google Spreadsheet.
 
       ![Python Validation Results](documentation/validation/python-pep0online-validation.png)
 
-### Test Cases and Results
-
-- The below table details the test cases that were used, the results and a cross-reference to the Feature ID that each test case exercised (click to open image):
-
-  <details>
-    <summary>Test Cases</summary>
-
-    ![Test Cases]
-  </details>
-  
-
 ### Known bugs
 
 - Problem with longer line length.
