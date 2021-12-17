@@ -182,6 +182,22 @@ User details are store in external Google Spreadsheet.
 
 ## Design
 
+-   ### Flow Charts
+    The diagrams below outline the high level flow of control within the application :
+
+    <details>
+       <summary>Diagrams</summary>
+
+       ![Main Flowchart](documentation/flowcharts/01_main_flowchart.png)
+       ![Create User](documentation/flowcharts/02_create_user_flowchart.png)
+       ![Menu 1](documentation/flowcharts/03_04.png)
+       ![Menu 2](documentation/flowcharts/05_06_07.png)
+       ![Users Related functions](documentation/flowcharts/08_09.png)
+       ![Friend Related functions](documentation/flowcharts/10_11_12.png)
+       ![Friend Request Related functions](documentation/flowcharts/13_14.png)
+    </details>
+
+    
 ## Technologies Used
 
 ### Languages Used
@@ -203,11 +219,11 @@ User details are store in external Google Spreadsheet.
 
 ### Validator Testing
 
-- [Python Validator]
+- [Python Validator](http://pep8online.com/)
 
     - result for `run.py`
 
-      ![Python Validation Results]
+      ![Python Validation Results](documentation/validation/python-pep0online-validation.png)
 
 ### Test Cases and Results
 
