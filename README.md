@@ -238,7 +238,10 @@ User details are store in external Google Spreadsheet.
 
 ### Known bugs
 
-- List of the bugs
+- Problem with longer line length.
+
+    Originally lots of the line in my codes was streching more than 79 col causing line too long error while testing at PEP8 online check. After talking with my mentor, I was able to break the line into 2 or 3 line as per requirement. And that solve the issue with line too long error.
+
 ## Deployment
 
 ### How to clone the GitHub repository to work on duplicate file
