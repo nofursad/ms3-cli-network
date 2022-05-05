@@ -150,26 +150,37 @@ def update_user_detail():
             else:
                 print("Please Enter a valid last name.\n")
         while True:
-            mobile = input("Please enter your U.K. mobile number "
-                           "(e.g.07XXXXXXXXX):\n").strip()
-            validate_mobile = phonenumbers.parse(mobile, "GB")
-            mobile_list = SHEET.worksheet("users").col_values(3)
-            if phonenumbers.is_valid_number(validate_mobile):
-                if mobile in mobile_list:
-                    print("Mobile number already exist in database. "
-                          "Please try different number")
+            try:
+                mobile = input("Please enter your U.K. mobile number "
+                               "(e.g.07XXXXXXXXX):\n").strip()
+                int_mobile = int(mobile)
+                validate_mobile = phonenumbers.parse(mobile, "GB")
+                user_mobile = user_sheet.cell(row_number, 3).value
+                mobile_list = SHEET.worksheet("users").col_values(3)
+                if phonenumbers.is_valid_number(validate_mobile):
+                    if mobile != user_mobile:
+                        if mobile in mobile_list:
+                            print("Mobile number already exist in database. "
+                                "Please try different number")
+                    else:
+                        break
                 else:
-                    break
-            else:
-                print("Please enter valid phone number as show in example.\n")
+                    print("Please enter valid phone number as show "
+                          "in example.\n")
+            except ValueError:
+                print("Please enter valid phone number as show "
+                      "in example.\n")  
+                continue
         while True:
             email = input("Please enter your email address:\n").strip()
+            user_email = user_sheet.cell(row_number, 4).value
             email_list = SHEET.worksheet("users").col_values(4)
             email_format = (
                 r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
             if re.fullmatch(email_format, email):
-                if email in email_list:
-                    print("Email Address already exist in database. "
+                if email != user_email:
+                    if email in email_list:
+                        print("Email Address already exist in database. "
                           "Please try different email address")
                 else:
                     break
@@ -177,9 +188,6 @@ def update_user_detail():
                 print("Please enter valid email address.\n")
 
         new_data = (fname, lname, mobile, email)
-        print(mobile)
-        print(type(mobile))
-        input("")
         print("Updating new details...\n")
 
         # Updating the new data to the row in USERS spreedsheet of
@@ -571,19 +579,25 @@ def createuser():
         # Checking if the input is valid U.K. mobile number
         # before storing it
         while True:
-            mobile = input("Please enter your U.K. mobile number "
-                           "(e.g.07XXXXXXXXX):\n").strip()
-            validate_mobile = phonenumbers.parse(mobile, "GB")
-            mobile_list = SHEET.worksheet("users").col_values(3)
-            if phonenumbers.is_valid_number(validate_mobile):
-                if mobile in mobile_list:
-                    print("Mobile number already exist in database. "
-                          "Please try different number")
+            try:
+                mobile = input("Please enter your U.K. mobile number "
+                               "(e.g.07XXXXXXXXX):\n").strip()
+                int_mobile = int(mobile)
+                validate_mobile = phonenumbers.parse(mobile, "GB")
+                mobile_list = SHEET.worksheet("users").col_values(3)
+                if phonenumbers.is_valid_number(validate_mobile):
+                    if mobile in mobile_list:
+                        print("Mobile number already exist in database. "
+                              "Please try different number")
+                    else:
+                        break
                 else:
-                    break
-            else:
+                    print("Please enter valid phone number as show "
+                          "in example.\n")
+            except ValueError:
                 print("Please enter valid phone number as show "
-                      "in example.\n")
+                      "in example.\n")  
+                continue
         # Checking if the input is valid email address before storing it
         while True:
             email = input("Please enter your email address:\n").strip()
